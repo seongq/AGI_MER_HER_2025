@@ -80,10 +80,7 @@ def train_model(settings, hyp_params, train_loader, dev_loader, test_loader):
                 aux_loss = 0
                 MKD_loss = 0
                 print("MKD 중")
-                print("MKD 중")
-                print("MKD 중")
-                print("MKD 중")
-                print("MKD 중")
+         
                 if 'a' in hyp_params.MKD_modals:
                     MKD_loss += F.kl_div(F.log_softmax(x_aux_a,dim=1), F.softmax(x_teacher_a_pred,dim=1), reduction="batchmean")
                 elif 'v' in hyp_params.MKD_modals:
