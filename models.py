@@ -220,9 +220,7 @@ class TVAModel_Cross(nn.Module): # trimodal cross-attn model
         # video to audio
         x_v2a, _ = self.mha_v_a(x_mfcc, x_vid, x_vid)
         x_v2a = torch.mean(x_v2a, dim=1)
-        # addition
-        #import pdb
-        #pdb.set_trace()
+
         x_tva2 = torch.stack((x_a2t, x_v2t, x_t2v, x_a2v, x_t2a, x_v2a), dim=1) 
         x_tva2_mean, x_tva2_std = torch.std_mean(x_tva2, dim=1)
         x_tva2 = torch.cat((x_tva2_mean, x_tva2_std), dim=1) 
