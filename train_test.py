@@ -160,7 +160,6 @@ if __name__ == '__main__':
     with open(id_to_numberid_path,'r') as f:
         lines = f.readlines()
 
-    # 각 줄에서 \n 제거하고 \t 기준으로 나누기
     str_ids = [line.strip().split('\t')[0] for line in lines]
 
  
